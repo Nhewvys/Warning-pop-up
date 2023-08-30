@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Warning Pop-Up</title>
+</head>
+<body>
+    <div class="pop-up" id="pop-up">
+        <i class="fa-solid fa-exclamation"></i> 
+            <div class="message">
+                <p>Hello world! this is a pop-up</p> 
+            </div>
+        <i class="fa-solid fa-xmark"></i>
+        <div class="progress active"></div>
+    </div>
+    <main><button id="button">Show Pop-up</button></main>
+</body>
+<script>
+    const button = document.querySelector('#button'),
+          popUp = document.querySelector('#pop-up'),
+          progress = document.querySelector('.progress'),
+          close = document.querySelector('.fa-xmark')
+    button.addEventListener('click', ()=>{
+        popUp.classList.add('active')
+        progress.classList.add('active')
+        
+        setTimeout(() => {
+            popUp.classList.remove('active')
+        }, 5000);
+        setTimeout(() => {
+            progress.classList.remove('active')
+        }, 5500);
+    })
+    close.addEventListener('click', ()=>{
+        popUp.classList.remove('active')
+    })
+</script>
+</html>

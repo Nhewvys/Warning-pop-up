@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;800&display=swap');
+
+* {
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+main {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+
+}
+
+.pop-up {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border-radius: 6px;
+    border-left: 4px solid #4052f7;
+    box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff10;
+    right: 30px;
+    top: 20px;
+    transform: translateX(calc(100% + 30px));
+    opacity: 0;
+    transition: .3s;
+    overflow: hidden;
+}
+.progress{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background-color: #4052f7;
+}
+.progress.active{
+    animation: progress 5s linear forwards;
+}
+@keyframes progress {
+    from{
+        left: 0;
+    }
+    to{
+        left: -100%;
+    }
+}
+.pop-up.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.message {
+    margin-right: 15px;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: .8rem;
+    font-weight: 700;
+}
+
+.pop-up>.fa-exclamation {
+    background-color: #4052f7;
+    font-size: .9rem;
+    color: #f2f2f2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 50%;
+}
+
+.fa-xmark {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    font-size: .9em;
+    opacity: .5;
+    cursor: pointer;
+}
+
+button {
+    padding: 10px;
+    background-color: #4052f7;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    color: #f8f8f8;
+    cursor: pointer;
+    transition: .4s all;
+}
+
+button:hover {
+    background-color: #4052f7d1;
+}
